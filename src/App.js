@@ -2,12 +2,24 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const gameData = [
-  [{active:false},{active:false},{active:false},{active:false}],
-  [{active:false},{active:false},{active:false},{active:false}],
-  [{active:false},{active:false},{active:false},{active:false}],
-  [{active:false},{active:false},{active:false},{active:false}],
-];
+// const gameData = [
+//   [{active:false},{active:false},{active:false},{active:false}],
+//   [{active:false},{active:false},{active:false},{active:false}],
+//   [{active:false},{active:false},{active:false},{active:false}],
+//   [{active:false},{active:false},{active:false},{active:false}],
+// ];
+// const createGameBoard = () => {
+  const COLUMNS = 5;
+  const ROWS = 5;
+  let gameData = [];
+  for (let i = 0; i <= ROWS; i++) {
+    let newRow = [];
+    for (let j = 0; j <= COLUMNS; j++) {
+      newRow.push({active:false});
+    }
+    gameData.push(newRow);
+  }
+// }
 
 class App extends Component {
   constructor(props) {
